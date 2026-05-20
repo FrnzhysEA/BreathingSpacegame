@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cg12ragpovlei"]
+
+[ext_resource type="Texture2D" uid="uid://8atqf62gdp1x" path="res://assets/art/MIASC.png" id="1_q7cdq"]
+[ext_resource type="Texture2D" uid="uid://bmfxe0kpeuqvr" path="res://assets/art/MIA 1.png" id="2_24522"]
+[ext_resource type="Script" uid="uid://bx5vh86qpne13" path="res://scripts/system/mia.gd" id="2_rmcma"]
+[ext_resource type="Texture2D" uid="uid://dxeydedawhwpq" path="res://assets/art/HD AL.png" id="4_8qojr"]
+[ext_resource type="Texture2D" uid="uid://dgeic0dwg2s8m" path="res://assets/art/MIA_prob.png" id="5_qm73f"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ChoiceUI.tscn" id="6_qm73f"]
+[ext_resource type="PackedScene" uid="uid://bf0726vher6rn" path="res://global/anxiety_meter.tscn" id="7_g7n1i"]
+[ext_resource type="Script" uid="uid://cfufhnv422dxs" path="res://scripts/system/1st_choice_ui.gd" id="7_tf467"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rmcma"]
+radius = 56.005283
+
+[node name="Classroom" type="Node2D" unique_id=765082926]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2007587078]
+texture_filter = 1
+scale = Vector2(1.9326829, 1.748691)
+texture = ExtResource("1_q7cdq")
+centered = false
+
+[node name="Mia" type="Node2D" parent="." unique_id=2141816708]
+script = ExtResource("2_rmcma")
+
+[node name="Sprite2D" type="Sprite2D" parent="Mia" unique_id=1575492201]
+position = Vector2(781, 863.75)
+scale = Vector2(2.0661156, 1.9100419)
+texture = ExtResource("2_24522")
+
+[node name="Area2D" type="Area2D" parent="Mia" unique_id=686190236]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mia/Area2D" unique_id=40180119]
+position = Vector2(821, 753)
+scale = Vector2(1, 1.9999999)
+shape = SubResource("CircleShape2D_rmcma")
+
+[node name="Label" type="Label" parent="Mia" unique_id=1261694469]
+offset_left = 787.0
+offset_top = 585.0
+offset_right = 832.0
+offset_bottom = 620.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 25
+text = "Mia"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1873372642]
+anchor_mode = 0
+zoom = Vector2(1, 0.749)
+
+[node name="DimLayer" type="CanvasLayer" parent="." unique_id=1022655294]
+
+[node name="DimOverlay" type="ColorRect" parent="DimLayer" unique_id=2082786580]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="CharacterLayer" type="CanvasLayer" parent="." unique_id=1579225543]
+layer = 2
+
+[node name="MiaProb" type="Sprite2D" parent="CharacterLayer" unique_id=1581051503]
+texture_filter = 1
+position = Vector2(1451, 817)
+scale = Vector2(1.6362528, 1.4957681)
+texture = ExtResource("5_qm73f")
+
+[node name="HdAl" type="Sprite2D" parent="CharacterLayer" unique_id=579599729]
+position = Vector2(420, 816.9999)
+scale = Vector2(1.4417996, 1.4161785)
+texture = ExtResource("4_8qojr")
+
+[node name="CanvasLayer" parent="." unique_id=159225519 instance=ExtResource("6_qm73f")]
+layer = 3
+script = ExtResource("7_tf467")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=222498173]
+layer = 4
+
+[node name="Control" parent="UILayer" unique_id=1347589915 instance=ExtResource("7_g7n1i")]
+offset_left = -20.0
+offset_top = 15.0
+offset_right = -20.0
+offset_bottom = 15.0

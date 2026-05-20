@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cj272217iw3rs"]
+
+[ext_resource type="Texture2D" uid="uid://loj7uy87b13h" path="res://scenes/act1/gameplay/assets/phelan_hallway.png" id="1_2gdo0"]
+[ext_resource type="Script" uid="uid://bjplobqw3ymp2" path="res://scenes/act1/gameplay/mia_convo.gd" id="3_2gdo0"]
+[ext_resource type="PackedScene" uid="uid://d10qeytqsiyse" path="res://scenes/act1/gameplay/player.tscn" id="4_b1jeh"]
+[ext_resource type="Texture2D" uid="uid://da34ngr3suk7j" path="res://scenes/act1/gameplay/assets/Mia_crouchingdown.png" id="4_uacf3"]
+[ext_resource type="Script" uid="uid://rnxqwobfg2wu" path="res://scenes/act1/gameplay/scripts/1st_phellan_fade.gd" id="5_mtncx"]
+
+[sub_resource type="GDScript" id="GDScript_wrm1d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gdo0"]
+size = Vector2(6527, 527)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uacf3"]
+size = Vector2(6473, 463)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2gdo0"]
+radius = 126.25
+height = 508.0
+
+[node name="Game" type="Node2D" unique_id=1132387809]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=619607089]
+script = SubResource("GDScript_wrm1d")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2037329698]
+position = Vector2(73, 23)
+scale = Vector2(1.2000003, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=701569263]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-52.49999, -18)
+scale = Vector2(1.5990388, 2.153734)
+texture = ExtResource("1_2gdo0")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=220100372]
+
+[node name="CollisionShape2D_Ceiling" type="CollisionShape2D" parent="StaticBody2D" unique_id=1786728328]
+position = Vector2(3199.5, 253.5)
+shape = SubResource("RectangleShape2D_2gdo0")
+
+[node name="CollisionShape2D2_Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=717014721]
+position = Vector2(3214, 1578)
+shape = SubResource("RectangleShape2D_uacf3")
+
+[node name="PLAYER" parent="." unique_id=278288787 groups=["player"] instance=ExtResource("4_b1jeh")]
+position = Vector2(4528, 1290)
+scale = Vector2(2.0745668, 2.1290193)
+
+[node name="Camera2D" type="Camera2D" parent="PLAYER" unique_id=136866532]
+position = Vector2(16.871002, -318.45642)
+limit_left = 2
+limit_top = 1
+limit_right = 6436
+limit_bottom = 1338
+position_smoothing_enabled = true
+
+[node name="Mia" type="Node2D" parent="." unique_id=1220509514]
+z_index = -1
+script = ExtResource("3_2gdo0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Mia" unique_id=78201957]
+z_index = -1
+position = Vector2(2747.0002, 1014.00006)
+scale = Vector2(1.6371485, 1.5799999)
+texture = ExtResource("4_uacf3")
+
+[node name="Label" type="Label" parent="Mia" unique_id=1511791227]
+offset_left = 2559.0
+offset_top = 525.0
+offset_right = 2937.0
+offset_bottom = 594.0
+theme_override_colors/font_color = Color(18.892002, 18.892002, 18.892002, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 9
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Press E to Interact"
+
+[node name="Area2D" type="Area2D" parent="Mia" unique_id=326993010]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mia/Area2D" unique_id=1856078389]
+position = Vector2(2749, 1005)
+shape = SubResource("CapsuleShape2D_2gdo0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=323021034]
+script = ExtResource("5_mtncx")
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=1071373893]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_right = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)

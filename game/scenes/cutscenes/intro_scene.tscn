@@ -8,11 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://yvw1binhjajn" path="res://assets/art/dialogue_box.png" id="6_8uyns"]
 [ext_resource type="FontFile" uid="uid://c8advutgufax8" path="res://assets/fonts/static/LibreFranklin-MediumItalic.ttf" id="6_eeuv8"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3812"]
-texture = ExtResource("6_8uyns")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xy0d8"]
-
 [node name="Alex_house_scene" type="Node2D" unique_id=165784648]
 
 [node name="Game" type="Node2D" parent="." unique_id=1199751997]
@@ -51,45 +46,45 @@ grow_vertical = 2
 color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1262960305]
-anchors_preset = -1
-anchor_top = 0.1037037
-offset_left = 213.0
-offset_top = 744.0
-offset_right = 1833.0
-offset_bottom = 1045.0
-size_flags_vertical = 8
-theme_override_styles/panel = SubResource("StyleBoxTexture_k3812")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextboxContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1410104813]
-anchors_preset = -1
-anchor_left = -0.004166667
-anchor_top = 1.0888889
-anchor_right = 0.9760417
-anchor_bottom = 1.012037
-offset_left = 281.0
-offset_top = -323.0
-offset_right = -195.0
-offset_bottom = -116.0
+[node name="TextboxContainer" type="Control" parent="CanvasLayer" unique_id=302721391]
+layout_mode = 3
+anchor_left = -0.6822917
+anchor_top = -0.015740741
+anchor_right = -0.0125
+offset_left = 1623.0
+offset_top = 895.0
+offset_right = 1655.0
+offset_bottom = 1010.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
 metadata/_edit_use_anchors_ = true
 
+[node name="DialogueBoxBG" type="TextureRect" parent="CanvasLayer/TextboxContainer" unique_id=116733880]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -887.0
+offset_top = -289.4
+offset_right = 817.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_8uyns")
+expand_mode = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TextboxContainer" unique_id=1255392946]
-layout_mode = 2
+layout_mode = 0
+offset_left = -104.0
+offset_top = -71.0
+offset_right = 1400.0
+offset_bottom = 60.0
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
-
-[node name="Panel" type="Panel" parent="CanvasLayer/TextboxContainer/MarginContainer" unique_id=1795444007]
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_xy0d8")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TextboxContainer/MarginContainer" unique_id=1940518486]
 layout_mode = 2

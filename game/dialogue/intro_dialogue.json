@@ -1,5 +1,5 @@
 {
-  "next_scene": "res://scenes/act1/gameplay/phelan_walking.tscn",
+  "next_scene": "res://scenes/gameplay/phelan_walking.tscn",
   "steps": [
 	{
 	  "type": "dialogue",

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cqfng56al5wnh"]
+
+[ext_resource type="PackedScene" uid="uid://dy7tn1m7748ba" path="res://scenes/act1/gameplay/Choice-MiaConvoUI.tscn" id="1_86ym6"]
+[ext_resource type="Texture2D" uid="uid://loj7uy87b13h" path="res://scenes/act1/gameplay/assets/phelan_hallway.png" id="1_gq31f"]
+[ext_resource type="Texture2D" uid="uid://uvkllk3q7ru5" path="res://scenes/act1/gameplay/assets/1.png" id="2_2wdqv"]
+[ext_resource type="PackedScene" uid="uid://bmgiqwrd5dfff" path="res://scenes/ui/anxiety_meter_ui/anxiety_meter.tscn" id="2_rwgve"]
+[ext_resource type="Texture2D" uid="uid://cqiegs8v1hlq7" path="res://scenes/act1/gameplay/assets/mia_standing.png" id="3_7y81k"]
+[ext_resource type="Script" uid="uid://hm3d0js42c0h" path="res://scenes/act1/gameplay/choice_mia.gd" id="3_vyx0q"]
+
+[node name="MiaConvo" type="Node2D" unique_id=544659655]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1747746360]
+position = Vector2(1220, 732)
+scale = Vector2(1.8486449, 2.1758127)
+texture = ExtResource("1_gq31f")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1008267015]
+position = Vector2(1828, 935)
+scale = Vector2(3.4893034, 3.5268102)
+texture = ExtResource("2_2wdqv")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1136767323]
+position = Vector2(510.00012, 986)
+scale = Vector2(3.4893034, 3.5268102)
+texture = ExtResource("3_7y81k")
+
+[node name="Control" parent="." unique_id=1347589915 instance=ExtResource("2_rwgve")]
+
+[node name="ChoiceUi" parent="." unique_id=1746414341 instance=ExtResource("1_86ym6")]
+script = ExtResource("3_vyx0q")

@@ -5,7 +5,7 @@ signal narration_finished
 const CHAR_READ_RATE = 0.0009
 
 @export var dialogue_json_path := "res://dialogue/intro_dialogue.json"
-const NEXT_SCENE := "res://scenes/act1/gameplay/phelan_walking.tscn"
+const NEXT_SCENE := "res://scenes/gameplay/phelan_walking.tscn"
 
 # ── UI ─────────────────────────────
 @onready var fade_rect = $Fade

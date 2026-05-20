@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://dy7tn1m7748ba"]
+
+[ext_resource type="Script" uid="uid://cbfpiqy8adqbr" path="res://scenes/ui/choice_ui/choice_manager.gd" id="1_xso7q"]
+[ext_resource type="FontFile" uid="uid://c8advutgufax8" path="res://Main Menu/fonts/static/LibreFranklin-MediumItalic.ttf" id="2_klpyl"]
+[ext_resource type="FontFile" uid="uid://co18xe23daq4b" path="res://Main Menu/fonts/static/LibreFranklin-Medium.ttf" id="3_03rfa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pr5li"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhyev"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.19215687, 0.19215687, 0.19215687, 0.7294118)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_462fc"]
+bg_color = Color(0.09062499, 0.09062499, 0.09062499, 0.16862746)
+
+[node name="ChoiceUi" type="CanvasLayer" unique_id=1746414341]
+script = ExtResource("1_xso7q")
+
+[node name="Dialogue" type="PanelContainer" parent="." unique_id=839105669]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = -220.90002
+offset_right = -150.0
+offset_bottom = -40.900024
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pr5li")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialogue" unique_id=434052324]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="ColorRect" type="Panel" parent="Dialogue/VBoxContainer" unique_id=1774382906]
+clip_contents = true
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qhyev")
+
+[node name="ProgressBar" type="ProgressBar" parent="Dialogue/VBoxContainer/ColorRect" unique_id=746569156]
+layout_mode = 0
+offset_right = 2095.0
+offset_bottom = 27.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialogue/VBoxContainer/ColorRect" unique_id=668854739]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 45.900024
+offset_right = 2087.0
+offset_bottom = 175.90002
+theme_override_fonts/normal_font = ExtResource("3_03rfa")
+theme_override_font_sizes/normal_font_size = 32
+text = "Alex: Hey… you okay?"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1021098424]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = -403.0
+offset_right = -150.0
+offset_bottom = -246.09998
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pr5li")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=2059970822]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/VBoxContainer" unique_id=897846267]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/CenterContainer" unique_id=1589215951]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="button_1" type="Button" parent="PanelContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1848818150]
+clip_contents = true
+custom_minimum_size = Vector2(625, 150)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_klpyl")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_462fc")
+text = "choice_1"
+
+[node name="button_2" type="Button" parent="PanelContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1439255865]
+clip_contents = true
+custom_minimum_size = Vector2(625, 150)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_klpyl")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_462fc")
+text = "choice_2"
+
+[node name="button_3" type="Button" parent="PanelContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1048914446]
+clip_contents = true
+custom_minimum_size = Vector2(625, 150)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_klpyl")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_462fc")
+text = "choice_3"

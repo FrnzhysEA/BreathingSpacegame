@@ -19,12 +19,3 @@ func save_progress() -> void:
 		"level": current_level
 	}
 	SaveManager.save_game(data)
-
-func load_progress() -> bool:
-	var data := SaveManager.load_game()
-	if data.is_empty():
-		return false
-	anxiety        = float(data.get("anxiety", 0.0))
-	target_anxiety = float(data.get("target_anxiety", 0.0))
-	current_level  = int(data.get("level", 1))
-	return true

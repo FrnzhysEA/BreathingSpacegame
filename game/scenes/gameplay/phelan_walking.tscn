@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://cnb2qpiu8f2ou"]
+
+[ext_resource type="PackedScene" path="res://scripts/player/player.tscn" id="1_ebmjs"]
+[ext_resource type="Texture2D" uid="uid://btdfghynur7qa" path="res://assets/art/phelan_hallway.png" id="1_fqooe"]
+[ext_resource type="Script" uid="uid://d24yeo0ww6g2s" path="res://scripts/system/door.gd" id="3_08s8i"]
+[ext_resource type="Texture2D" uid="uid://cpcjjuwpwi7wk" path="res://assets/art/Classroom Door.png" id="4_kxgpp"]
+[ext_resource type="Script" uid="uid://cy4rvavf665tu" path="res://scripts/system/1st_phellan_fade.gd" id="5_kxgpp"]
+
+[sub_resource type="GDScript" id="GDScript_va6oe"]
+script/source = "extends Node2D
+
+@onready var player = $PLAYER
+@onready var spawn_start = $Spawn_Start
+
+func _ready():
+	player.position = spawn_start.position
+"
+
+[sub_resource type="GDScript" id="GDScript_wrm1d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xhxk"]
+size = Vector2(349, 687.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwrt1"]
+size = Vector2(6462.5, 362)
+
+[node name="Game" type="Node2D" unique_id=1132387809]
+script = SubResource("GDScript_va6oe")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=619607089]
+script = SubResource("GDScript_wrm1d")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2037329698]
+position = Vector2(73, 23)
+scale = Vector2(1.2000003, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=701569263]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-52.49999, -18)
+scale = Vector2(1.5990388, 2.153734)
+texture = ExtResource("1_fqooe")
+centered = false
+
+[node name="Door" type="Node2D" parent="." unique_id=1705231006]
+script = ExtResource("3_08s8i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=649116504]
+position = Vector2(4478.5, 804)
+scale = Vector2(2.4041123, 2.7035577)
+texture = ExtResource("4_kxgpp")
+
+[node name="Label" type="Label" parent="Door" unique_id=10230461]
+offset_left = 4290.0
+offset_top = 377.0
+offset_right = 4668.0
+offset_bottom = 446.0
+theme_override_colors/font_color = Color(18.892002, 18.892002, 18.892002, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 9
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Press E to enter"
+
+[node name="Area2D" type="Area2D" parent="Door" unique_id=330879330]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D" unique_id=1162629111]
+position = Vector2(4478.5, 802.25)
+shape = SubResource("RectangleShape2D_6xhxk")
+
+[node name="Spawn_Start" type="Marker2D" parent="." unique_id=692049237]
+position = Vector2(199, 1298)
+
+[node name="Spawn_Stairs" type="Marker2D" parent="." unique_id=1554117607]
+position = Vector2(3942, 1297)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=336797854]
+
+[node name="CollisionShape2DCeiling" type="CollisionShape2D" parent="StaticBody2D" unique_id=121214123]
+position = Vector2(3209, 294)
+shape = SubResource("RectangleShape2D_fwrt1")
+
+[node name="CollisionShape2DFloor" type="CollisionShape2D" parent="StaticBody2D" unique_id=556327485]
+position = Vector2(3197.5, 1525)
+shape = SubResource("RectangleShape2D_fwrt1")
+
+[node name="PLAYER" parent="." unique_id=278288787 groups=["player"] instance=ExtResource("1_ebmjs")]
+position = Vector2(228, 1341.9999)
+scale = Vector2(2.0745668, 2.1290193)
+
+[node name="Camera2D" type="Camera2D" parent="PLAYER" unique_id=136866532]
+position = Vector2(2.861023e-06, -253.63786)
+zoom = Vector2(0.87, 0.87)
+limit_left = 8
+limit_top = 13
+limit_right = 6416
+limit_bottom = 1344
+position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=323021034]
+script = ExtResource("5_kxgpp")
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=1071373893]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
