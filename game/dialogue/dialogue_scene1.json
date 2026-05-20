@@ -1,0 +1,136 @@
+{
+  "next_scene": "res://scenes/act1/gameplay/phelan&dolan_findingmia.tscn",
+  "steps": [
+	{
+	  "type": "dialogue",
+	  "character": "Narration",
+	  "text": "Alex enters the classroom and notices Mia sitting quietly.",
+	  "duration": 2.5,
+	  "skippable": true
+	},
+	{
+	  "type": "dialogue",
+	  "character": "Narration",
+	  "text": "She avoids eye contact, visibly tense.",
+	  "duration": 2.5,
+	  "skippable": true
+	},
+	{
+	  "type": "choice",
+	  "id": "choice_1",
+	  "options": [
+		{
+		  "text": "Hey… you okay? You seem off.",
+		  "anxiety_delta": -0.10,
+		  "next_step_id": "after_choice_1"
+		},
+		{
+		  "text": "You look tired today.",
+		  "anxiety_delta": 0.05,
+		  "next_step_id": "after_choice_1"
+		},
+		{
+		  "text": "You don't look okay. What's wrong with you?",
+		  "anxiety_delta": 0.20,
+		  "next_step_id": "after_choice_1"
+		}
+	  ]
+	},
+	{
+	  "type": "sequence",
+	  "id": "after_choice_1",
+	  "steps": [
+		{
+		  "type": "dialogue",
+		  "character": "Alex",
+		  "text": "{chosen_text}",
+		  "duration": 2.0,
+		  "skippable": true
+		},
+		{
+		  "type": "dialogue",
+		  "character": "Mia",
+		  "text": "I'm fine… just tired.",
+		  "duration": 2.0,
+		  "skippable": true
+		},
+		{
+		  "type": "dialogue",
+		  "character": "Alex",
+		  "text": "Is it because of the quiz?",
+		  "duration": 2.0,
+		  "skippable": true
+		},
+		{
+		  "type": "dialogue",
+		  "character": "Mia",
+		  "text": "…I just need some time alone, okay?",
+		  "duration": 2.5,
+		  "skippable": true
+		}
+	  ]
+	},
+	{
+	  "type": "choice",
+	  "id": "choice_2",
+	  "options": [
+		{
+		  "text": "Alright… I'll give you space. I'm here if you need me.",
+		  "anxiety_delta": -0.15,
+		  "next_step_id": "ending"
+		},
+		{
+		  "text": "Okay… I guess.",
+		  "anxiety_delta": 0.05,
+		  "next_step_id": "ending"
+		},
+		{
+		  "text": "Fine, whatever.",
+		  "anxiety_delta": 0.20,
+		  "next_step_id": "ending"
+		}
+	  ]
+	},
+	{
+	  "type": "sequence",
+	  "id": "ending",
+	  "steps": [
+		{
+		  "type": "dialogue",
+		  "character": "Alex",
+		  "text": "{chosen_text}",
+		  "duration": 2.0,
+		  "skippable": true
+		},
+		{
+		  "type": "dialogue",
+		  "character": "Narration",
+		  "text": "Alex steps back as class begins, but his thoughts linger.",
+		  "duration": 2.5,
+		  "skippable": true
+		},
+		{
+		  "type": "dialogue",
+		  "character": "Alex",
+		  "text": "That didn't sound like just tired…",
+		  "duration": 2.0,
+		  "skippable": true
+		},
+		{
+		  "type": "dialogue",
+		  "character": "Alex",
+		  "text": "Maybe I pushed too much…",
+		  "duration": 2.0,
+		  "skippable": true
+		},
+		{
+		  "type": "dialogue",
+		  "character": "Alex",
+		  "text": "But something's definitely wrong.",
+		  "duration": 2.5,
+		  "skippable": true
+		}
+	  ]
+	}
+  ]
+}

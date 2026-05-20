@@ -1,0 +1,37 @@
+{
+  "next_scene": "res://scenes/act1/gameplay/phelan_walking.tscn",
+  "steps": [
+	{
+	  "type": "dialogue",
+	  "text": "The room is quiet. Morning light slowly fills Alex’s room through the window."
+	},
+	{
+	  "type": "dialogue",
+	  "text": "An alarm has already gone off. Another school day begins."
+	},
+	{
+	  "type": "dialogue",
+	  "text": "Alex is already dressed and ready."
+	},
+	{
+	  "type": "dialogue",
+	  "text": "She checks her bag carefully. Everything is in place."
+	},
+	{
+	  "type": "dialogue",
+	  "text": "Her phone lights up. A message from Mia."
+	},
+	{
+	  "type": "dialogue",
+	  "text": "She reads it, then sets it aside."
+	},
+	{
+	  "type": "dialogue",
+	  "text": "The morning feels calm... almost too calm."
+	},
+	{
+	  "type": "dialogue",
+	  "text": "Alex takes one last look around her room, then leaves."
+	}
+  ]
+}

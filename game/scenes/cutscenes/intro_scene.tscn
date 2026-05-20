@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://dp658g2npotbn"]
+
+[ext_resource type="Texture2D" uid="uid://cjconpb3w508l" path="res://assets/art/Leaving_Alex.png" id="2_nairw"]
+[ext_resource type="Texture2D" uid="uid://cteakauq6drd6" path="res://assets/art/Alex_Side.png" id="3_eeuv8"]
+[ext_resource type="Texture2D" uid="uid://cqu0ofjqprono" path="res://assets/art/First_Alex.png" id="4_8ppnm"]
+[ext_resource type="Texture2D" uid="uid://b0r4aykl8l1xt" path="res://assets/art/Alex_wakeup.jpg" id="5_f2vuq"]
+[ext_resource type="Script" uid="uid://c2tmmsjlv4i0v" path="res://scenes/cutscenes/intro_scene.gd" id="5_odq7w"]
+[ext_resource type="Texture2D" uid="uid://yvw1binhjajn" path="res://assets/art/dialogue_box.png" id="6_8uyns"]
+[ext_resource type="FontFile" uid="uid://c8advutgufax8" path="res://assets/fonts/static/LibreFranklin-MediumItalic.ttf" id="6_eeuv8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3812"]
+texture = ExtResource("6_8uyns")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xy0d8"]
+
+[node name="Alex_house_scene" type="Node2D" unique_id=165784648]
+
+[node name="Game" type="Node2D" parent="." unique_id=1199751997]
+scale = Vector2(0.797, 0.7950001)
+
+[node name="BG_4" type="Sprite2D" parent="Game" unique_id=2080919624]
+position = Vector2(1207, 677)
+scale = Vector2(1.904272, 1.6120996)
+texture = ExtResource("2_nairw")
+
+[node name="BG_3" type="Sprite2D" parent="Game" unique_id=309495568]
+position = Vector2(1206.0001, 677)
+scale = Vector2(1.9018986, 1.6061684)
+texture = ExtResource("3_eeuv8")
+
+[node name="BG_2" type="Sprite2D" parent="Game" unique_id=1739849379]
+position = Vector2(1206, 678.00006)
+scale = Vector2(1.8987342, 1.6085409)
+texture = ExtResource("4_8ppnm")
+
+[node name="BG_1" type="Sprite2D" parent="Game" unique_id=1134533721]
+position = Vector2(1205, 677.74994)
+scale = Vector2(1.561198, 1.3237303)
+texture = ExtResource("5_f2vuq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1464944664]
+script = ExtResource("5_odq7w")
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=144349067]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1262960305]
+anchors_preset = -1
+anchor_top = 0.1037037
+offset_left = 213.0
+offset_top = 744.0
+offset_right = 1833.0
+offset_bottom = 1045.0
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxTexture_k3812")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextboxContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1410104813]
+anchors_preset = -1
+anchor_left = -0.004166667
+anchor_top = 1.0888889
+anchor_right = 0.9760417
+anchor_bottom = 1.012037
+offset_left = 281.0
+offset_top = -323.0
+offset_right = -195.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TextboxContainer" unique_id=1255392946]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="CanvasLayer/TextboxContainer/MarginContainer" unique_id=1795444007]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xy0d8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TextboxContainer/MarginContainer" unique_id=1940518486]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="CanvasLayer/TextboxContainer/MarginContainer/HBoxContainer" unique_id=1025658356]
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.00039445335, 0.00039445335, 0.00039445335, 1)
+theme_override_font_sizes/font_size = 30
+text = "*"
+
+[node name="Label" type="Label" parent="CanvasLayer/TextboxContainer/MarginContainer/HBoxContainer" unique_id=422615178]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_eeuv8")
+theme_override_font_sizes/font_size = 30
+text = "narration_script"
+autowrap_mode = 3
+clip_text = true
+
+[node name="End" type="Label" parent="CanvasLayer/TextboxContainer/MarginContainer/HBoxContainer" unique_id=1193882055]
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "v"
